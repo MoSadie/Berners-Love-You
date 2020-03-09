@@ -1,0 +1,97 @@
+<html>
+    <head>
+        <title>
+            Berners Love You!
+        </title>
+
+        <link rel="icon" href="favicon.ico" type="image/x-icon"/>
+
+        <style>
+            p, h1, h2, blockquote {
+                width: fit-content;
+                margin:auto;
+            }
+        </style>
+
+        <script>
+            var possiblePosts = [
+                "https://www.reddit.com/r/aww/comments/ffbua6/its_okay_you_can_take_a_break_and_gib_me_pets_now/",
+                "https://www.reddit.com/r/bernesemountaindogs/comments/ffc504/bernese_walk_in_the_forest_today/",
+                "https://www.reddit.com/r/bernesemountaindogs/comments/fff5q9/berner_gathering/",
+                "https://www.reddit.com/r/aww/comments/ffcfm5/i_am_glad_i_live_in_a_country_where_the_president/",
+                "https://www.reddit.com/r/bernesemountaindogs/comments/fexz47/no_need_to_adjust_your_screen_my_puppy_is_green/",
+                "https://www.reddit.com/r/bernesemountaindogs/comments/feumgv/bernese_mountaing_dog_puppy_my_little_buddy/",
+                "https://www.reddit.com/r/aww/comments/feklnv/president_of_ireland_and_his_doggo_br%C3%B3d/",
+                "https://www.reddit.com/r/bernesemountaindogs/comments/fek3yj/doing_some_choring_more_hands_do_less_work_but_it/",
+                "https://www.reddit.com/r/bernesemountaindogs/comments/felbe7/our_boy_baron_is_12_weeks_30lbs_now/",
+                "https://www.reddit.com/r/bernesemountaindogs/comments/fek69a/the_face_i_wake_up_to_every_morning/",
+                "https://www.reddit.com/r/aww/comments/fedkdw/spencer_the_bernese_mountain_dog_puppy_is_one_of/",
+                "https://www.reddit.com/r/bernesemountaindogs/comments/feca06/my_woadie_max_we_finally_got_some_sun/",
+                "https://www.reddit.com/r/bernesemountaindogs/comments/fdzeqs/my_sweet_boy_shiro_who_is_far_more_photogenic/",
+                "https://www.reddit.com/r/bernesemountaindogs/comments/fdiwid/my_girl/",
+                "https://www.reddit.com/r/bernesemountaindogs/comments/fdly4l/still_has_to_make_sure_i_can_be_seen_always/",
+                "https://www.reddit.com/r/bernesemountaindogs/comments/fdlz00/anyone_else_talk_to_their_berner_blow_them_kisses/",
+                "https://www.reddit.com/r/bernesemountaindogs/comments/fdesc8/free_kisses/",
+                "https://www.reddit.com/r/aww/comments/fczlwi/the_president_of_irelands_dog_running_around_as/",
+                "https://www.reddit.com/r/bernesemountaindogs/comments/fd0lpv/carl_at_12_weeksso_happy_to_have_a_berner_back_in/",
+                "https://www.reddit.com/r/bernesemountaindogs/comments/fcpqb8/bears_big_brother_is_a_good_howl_teacher/",
+                "https://www.reddit.com/r/bernesemountaindogs/comments/fct3u8/lincoln_at_full_gallop_yard_just_reopened_after_a/",
+                "https://www.reddit.com/r/bernesemountaindogs/comments/fch0s0/well_hello/",
+                "https://www.reddit.com/r/bernesemountaindogs/comments/fci1g3/say_hello_to_out_first_dog_shes_been_with_us_for/",
+                "https://www.reddit.com/r/bernesemountaindogs/comments/fcbyd6/first_hike_with_little_brother/",
+                "https://www.reddit.com/r/bernesemountaindogs/comments/fbvoq6/my_dog_has_built_himself_his_own_little_corridor/",
+                "https://www.reddit.com/r/bernesemountaindogs/comments/fbpj83/one_year_later_they_are_best_friends/",
+                "https://www.reddit.com/r/bernesemountaindogs/comments/fbntvu/g%C3%BCnter_2y_and_d%C3%ADeter_6m_half_brothers_that_cannot/",
+                "https://www.reddit.com/r/bernesemountaindogs/comments/fblclq/my_wife_took_this_picture_today_and_calls_it/",
+                "https://www.reddit.com/r/aww/comments/fbdwbd/my_good_doggo_pepper/",
+                "https://www.reddit.com/r/bernesemountaindogs/comments/fbgo6f/i_made_it_mom/",
+                "https://www.reddit.com/r/bernesemountaindogs/comments/fbf1oz/bogart_got_groomed_yesterday_so_we_had_a_portrait/",
+                "https://www.reddit.com/r/bernesemountaindogs/comments/fa51ol/2019_vs_2020_sullivan_and_walter_just_a_couple_of/",
+                "https://www.reddit.com/r/bernesemountaindogs/comments/fa4s98/always_knows_how_to_make_me_laugh_look_over_and/",
+                "https://www.reddit.com/r/bernesemountaindogs/comments/f9z7a2/its_a_berner_life/",
+                "https://www.reddit.com/r/bernesemountaindogs/comments/f9q1sz/have_just_arrived_and_already_taken_the_best_seat/",
+                "https://www.reddit.com/r/bernesemountaindogs/comments/f9jwds/kenny_weve_had_him_a_month_he_just_laid_down_and/",
+                "https://www.reddit.com/r/bernesemountaindogs/comments/f9dlsu/my_fluffy_bear/",
+                "https://www.reddit.com/r/bernesemountaindogs/comments/f96lr8/she_loves_walking_on_tables/",
+                "https://www.reddit.com/r/bernesemountaindogs/comments/f9ak7y/eating_the_melting_snow_he_enjoys_it_m%C3%B6nch/",
+                "https://www.reddit.com/r/bernesemountaindogs/comments/f8xaid/this_is_turning_into_our_morning_routine_theres/",
+                "https://www.reddit.com/r/aww/comments/f8d3s1/please_talk_to_me_and_my_son_again/",
+                "https://www.reddit.com/r/bernesemountaindogs/comments/f8cmuo/get_a_good_picture_of_sky_sitting_in_the_snow_she/",
+                "https://www.reddit.com/r/bernesemountaindogs/comments/f84xg0/we_dubbed_it_fort_gus/",
+                "https://www.reddit.com/r/bernesemountaindogs/comments/f82h72/workaholic/",
+                "https://www.reddit.com/r/bernesemountaindogs/comments/f7xybs/waffles_is_always_so_happy_9_34_months/",
+                "https://www.reddit.com/r/bernesemountaindogs/comments/f7sq3l/sarah_mclaughlinarms_of_the_angels_playing_in_the/",
+                "https://www.reddit.com/r/bernesemountaindogs/comments/f7sgeb/got_link_a_brother_meet_flyyn_now_11wk_old/",
+                "https://www.reddit.com/r/bernesemountaindogs/comments/f7qpj9/someone_really_wanted_to_share_our_steaks_with_us/",
+                "https://www.reddit.com/r/bernesemountaindogs/comments/f7fzmo/always_trying_to_help_with_laundry/",
+                "https://www.reddit.com/r/bernesemountaindogs/comments/f7bs0p/smol_pup_sharp_teef/",
+                "https://www.reddit.com/r/bernesemountaindogs/comments/f6xssx/a_beautiful_18_degree_day_lets_hike/",
+                "https://www.reddit.com/r/bernesemountaindogs/comments/f6w3zz/in_case_anyone_was_wondering_what_its_like_to_own/",
+                "https://www.reddit.com/r/aww/comments/f6solq/hes_still_learning_how_to_dog/",
+                "https://www.reddit.com/r/bernesemountaindogs/comments/ffej4k/lazy_sunday/",
+                "https://www.reddit.com/r/bernesemountaindogs/comments/ff8a2t/sully_is_a_big_face_scratch_guy/",
+                "https://www.reddit.com/r/bernesemountaindogs/comments/fem8xs/being_ten_weeks_old_is_hard_work_ripley_is_pooped/",
+                "https://www.reddit.com/r/bernesemountaindogs/comments/fers6n/my_boys_are_home_from_doggie_boot_camp/",
+                "https://www.reddit.com/r/bernesemountaindogs/comments/fe66pc/post_walk_derps_eleanor_6_month/"
+            ];
+
+            function selectPost() {
+                var postIndex = Math.floor(Math.random() * possiblePosts.length);
+                var postURL = "";
+                postURL = possiblePosts[postIndex];
+                document.getElementById("post").setAttribute("href", postURL);
+                document.getElementById("post").innerHTML = postURL;
+                document.getElementById("backupLink").setAttribute("href", postURL);
+            }
+        </script>
+    </head>
+    <body>
+        <h1>Berners Love You!</h1>
+        <h2>Here is a random Burnese Mountain Dog related post from Reddit to make you smile!</h2>
+        <blockquote class="reddit-card"><a id="post" href="https://www.reddit.com/r/bernesemountaindogs/">Loading Reddit post, please wait a few seconds...</a></blockquote>
+        <p>If the content above doesn't display correctly (ex. vertical video cut off weirdly), click <a id="backupLink" href="/">here</a> to view the post on Reddit.</p>
+        <script>selectPost()</script>
+        <script async src="https://embed.redditmedia.com/widgets/platform.js" charset="UTF-8"></script>
+        <p><button onClick="location.reload()">Click for a new post!</button></p>
+    </body>
+</html>
