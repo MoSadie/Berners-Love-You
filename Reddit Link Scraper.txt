@@ -8,8 +8,9 @@ How to use:
 var posts = document.getElementsByClassName("SQnoC3ObvgnGjWt90zD9Z _2INHSNB8V5eaWp4P0rY_mE");
 var result = "";
 var next = posts[0].getAttribute("href");
+console.log(next);
 var i = 0;
-while (i < 10000 && next != "/r/bernesemountaindogs/comments/pyqhsq/stephen_snow_shamrocks_mushrooms/" && next !== undefined) {
+while (i < 1000 && next != "/r/bernesemountaindogs/comments/rqvc12/kratos_loves_me/" && next !== undefined) {
     if (posts[i] !== undefined) {
         result += "\n\"https://reddit.com" + next + "\",";
         if (posts[i+1] === undefined) {
@@ -21,4 +22,3 @@ while (i < 10000 && next != "/r/bernesemountaindogs/comments/pyqhsq/stephen_snow
     }
 }
 console.log(result);
-console.log(posts[0].getAttribute("href"));
