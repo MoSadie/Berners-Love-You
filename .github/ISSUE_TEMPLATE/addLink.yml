@@ -1,0 +1,17 @@
+name: Submit Post
+description: Submit a post to be added to the site
+title: '[Post Submission]: '
+labels: ['post submission']
+assignees: 'MoSadie'
+body:
+  - type: markdown
+    attributes:
+      value: |
+        **Please fill out the following information**
+  - type: input
+    attributes:
+      label: Link
+      description: Paste the full link to the Twitter or Reddit post here.
+      placeholder: 'https://reddit.com/r/...'
+    validations:
+      required: true
