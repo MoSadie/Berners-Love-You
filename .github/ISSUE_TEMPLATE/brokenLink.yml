@@ -1,0 +1,17 @@
+name: Broken Link
+description: Report a broken link
+title: '[Broken Link]: '
+labels: ['broken link']
+assignees: 'MoSadie'
+body:
+  - type: markdown
+    attributes:
+      value: |
+        **Please fill out the following information**
+  - type: input
+    attributes:
+      label: Link
+      description: Paste the broken link here, you can find it below the social media post.
+      placeholder: 'https://reddit.com/r/...'
+    validations:
+      required: true

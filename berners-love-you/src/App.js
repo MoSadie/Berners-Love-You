@@ -1,9 +1,16 @@
-import logo from './logo.svg';
 import { useState } from 'react';
 import RedditEmbed from './components/RedditEmbed';
 import TwitterEmbed from './components/TwitterEmbed';
 import posts from './posts.json';
 import './App.css';
+
+function isRedditPost(url) {
+  return url.startsWith("https://reddit.com") || url.startsWith("https://www.reddit.com");
+}
+
+function isTwitterPost(url) {
+  return url.startsWith("https://twitter.com") || url.startsWith("https://www.twitter.com");
+}
 
 function App() {
   function getRandomPost() {
@@ -19,16 +26,15 @@ function App() {
       <button type='button' onClick={() => setPost(getRandomPost())} style={{fontSize:16}}>New Post</button>
       <br />
       <div style={{padding: "10px"}}>
-      {post.startsWith("https://reddit.com") && <RedditEmbed key={post} url={post} />}
-      {post.startsWith("https://twitter.com") && <TwitterEmbed key={post} url={post} />}
+      {isRedditPost(post) && <RedditEmbed key={post} url={post} />}
+      {isTwitterPost(post) && <TwitterEmbed key={post} url={post} />}
       </div>
 
       <p>Link to original post:</p>
       <p>
         <a href={post}>{post}</a>
       </p>
-      {/* {visible && <RedditEmbed url="https://reddit.com/r/bernesemountaindogs/comments/ngfs33/im_wimth_friemd/" />}
-      {!visible && <TwitterEmbed url="https://twitter.com/bunsenbernerbmd/status/1511328624191844353" />} */}
+      <p>Encountered a broken post? Report it <a href="https://github.com/MoSadie/Berners-Love-You/issues">here!</a></p>
     </div>
   );
 }
