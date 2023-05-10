@@ -9,7 +9,7 @@ var result = "";
 var next = posts[0].getAttribute("href");
 console.log(next);
 var i = 0;
-while (i < 1000 && next != "/r/bernesemountaindogs/comments/10p08yi/our_baby_berner_coming_home/" && next !== undefined) {
+while (i < 1000 && next != "/r/bernesemountaindogs/comments/13d1bwb/i_love_bernese_in_slow_mo/" && next !== undefined) {
     if (posts[i] !== undefined) {
         result += "\n\"https://reddit.com" + next + "\",";
         if (posts[i+1] === undefined) {

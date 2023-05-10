@@ -12,6 +12,8 @@ function isTwitterPost(url) {
   return url.startsWith("https://twitter.com") || url.startsWith("https://www.twitter.com");
 }
 
+console.log("Fun fact! There are currently " + posts.length + " possible posts that can appear!");
+
 function App() {
   function getRandomPost() {
     return posts[Math.floor(Math.random() * posts.length)];
