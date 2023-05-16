@@ -1,0 +1,23 @@
+{
+  "name": "bly-validator",
+  "version": "1.0.0",
+  "description": "Validates a BLY post and updates the main project",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mosadie/berners-love-you.git"
+  },
+  "author": "MoSadie",
+  "license": "GPL-3.0-or-later",
+  "bugs": {
+    "url": "https://github.com/mosadie/berners-love-you/issues"
+  },
+  "homepage": "https://github.com/mosadie/berners-love-you#readme",
+  "dependencies": {
+    "args": "^5.0.3"
+  }
+}
