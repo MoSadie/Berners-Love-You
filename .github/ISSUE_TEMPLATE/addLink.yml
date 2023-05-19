@@ -11,7 +11,17 @@ body:
   - type: input
     attributes:
       label: Link
-      description: Paste the full link to the Twitter or Reddit post here.
+      description: Paste the full link to the post here.
       placeholder: 'https://reddit.com/r/...'
+    validations:
+      required: true
+  - type: dropdown
+    attributes:
+      label: Platform
+      description: Please select the post's platform.
+      multiple: false
+      options:
+        - "reddit"
+        - "twitter"
     validations:
       required: true
