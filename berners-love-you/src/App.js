@@ -4,12 +4,17 @@ import TwitterEmbed from './components/TwitterEmbed';
 import posts from './posts.json';
 import './App.css';
 
-function isRedditPost(url) {
-  return url.startsWith("https://reddit.com") || url.startsWith("https://www.reddit.com");
-}
+function getPostComponent(post) {
+  switch (post.platform) {
+    case 'reddit':
+      return <RedditEmbed key={post.url} url={post.url} />;
 
-function isTwitterPost(url) {
-  return url.startsWith("https://twitter.com") || url.startsWith("https://www.twitter.com");
+    case 'twitter':
+      return <TwitterEmbed key={post.url} url={post.url} />;
+
+    default:
+      return <p>An error has occurred, please try again later!</p>
+  }
 }
 
 console.log("Fun fact! There are currently " + posts.length + " possible posts that can appear!");
@@ -28,13 +33,12 @@ function App() {
       <button type='button' onClick={() => setPost(getRandomPost())} style={{fontSize:16}}>New Post</button>
       <br />
       <div style={{padding: "10px"}}>
-      {isRedditPost(post) && <RedditEmbed key={post} url={post} />}
-      {isTwitterPost(post) && <TwitterEmbed key={post} url={post} />}
+      {getPostComponent(post)}
       </div>
 
       <p>Link to original post:</p>
       <p>
-        <a href={post}>{post}</a>
+        <a href={post.url}>{post.url}</a>
       </p>
       <p>Encountered a broken post? Report it <a href="https://github.com/MoSadie/Berners-Love-You/issues">here!</a></p>
     </div>
