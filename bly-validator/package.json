@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "deleted": "node deleted.js"
   },
   "repository": {
     "type": "git",
@@ -18,6 +19,7 @@
   },
   "homepage": "https://github.com/mosadie/berners-love-you#readme",
   "dependencies": {
-    "args": "^5.0.3"
+    "args": "^5.0.3",
+    "axios": "^1.4.0"
   }
 }
