@@ -24,7 +24,17 @@ jobs:
               id: parse
               uses: zentered/issue-forms-body-parser@v2.0.0
             
-            - run: echo ${{ toJSON(steps.parse.outputs.data) }}
+            - name: test1
+              run: echo ${{ toJSON(steps.parse.outputs.data) }}
+
+            - name: test2
+              run: echo ${{ toJSON(steps.parse.outputs.data).link.text }}
+
+            - name: test3
+              run: echo ${{ steps.parse.outputs.data.link.text }}
+
+            - name: test4
+              run: echo ${{ toJSON(steps.parse.outputs.data).platform.text }}
                 
             - name: Checkout
               uses: actions/checkout@v3
