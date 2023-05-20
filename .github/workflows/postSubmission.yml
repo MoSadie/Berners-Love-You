@@ -31,10 +31,10 @@ jobs:
               run: echo ${{ toJSON(steps.parse.outputs.data).link }}
 
             - name: test3
-              run: echo ${{ toJSON(steps.parse.outputs.data.link) }}
+              run: echo ${{ toJSON(steps.parse.outputs.data['link']) }}
 
             - name: test4
-              run: echo ${{ toJSON(steps.parse.outputs.data)['link'] }}
+              run: echo ${{ steps.parse.outputs.data.link.text }}
                 
             - name: Checkout
               uses: actions/checkout@v3
