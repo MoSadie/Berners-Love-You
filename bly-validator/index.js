@@ -3,13 +3,24 @@ const args = require("args");
 args
   .option("post", "The URL of the post to validate")
   .option("platform", "The platform to validate the post for")
+  .option("json", "Parsed JSON of a GitHub Issue body")
   .option("existing", "The file with existing posts to update.")
   .option("output", "The output file to write the results to");
 
 const flags = args.parse(process.argv);
 
-if (!flags.post || !flags.platform || !flags.existing || !flags.output) {
+if (((!flags.post || !flags.platform) || !flags.json ) || !flags.existing || !flags.output) {
   args.showHelp();
+}
+
+if (flags.json) {
+  // Parse the JSON
+  console.log("Using JSON input")
+  flags.platform = flags.json.platform.text;
+  flags.post = flags.json.link.text;
+
+  console.log("Platform: " + flags.platform);
+  console.log("Post: " + flags.post);
 }
 
 const fs = require("fs");
