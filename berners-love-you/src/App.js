@@ -30,7 +30,7 @@ function App() {
     <div className="App">
       <h1>Berners loves you!</h1>
       <h3>Here is a Bernese Mountain Dog post to make you smile! 😄</h3>
-      <button type='button' onClick={() => setPost(getRandomPost())} style={{fontSize:16}}>New Post</button>
+      <button type='button' onClick={() => setPost(getRandomPost())} style={{fontSize:16}}>Next Post</button>
       <br />
       <div style={{padding: "10px"}}>
       {getPostComponent(post)}
