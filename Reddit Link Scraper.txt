@@ -7,9 +7,9 @@
 var posts = document.getElementsByClassName("SQnoC3ObvgnGjWt90zD9Z _2INHSNB8V5eaWp4P0rY_mE");
 var result = "";
 var next = posts[0].getAttribute("href");
-console.log(next);
+var newStop = next;
 var i = 0;
-while (i < 1000 && next != "/r/bernesemountaindogs/comments/159pkc4/lucy_at_11_weeks_getting_big_so_fast/" && next !== undefined) {
+while (i < 1000 && next != "/r/bernesemountaindogs/comments/18clle1/he_got_caught_peeking_at_his_presents/" && next !== undefined) {
     if (posts[i] !== undefined) {
         result += "\n{\"url\":\"https://reddit.com" + next + "\",\n\"platform\":\"reddit\"},";
         if (posts[i+1] === undefined) {
@@ -21,4 +21,5 @@ while (i < 1000 && next != "/r/bernesemountaindogs/comments/159pkc4/lucy_at_11_w
     }
 }
 console.log(result);
-console.log(i);
+console.log("Total posts: " + i);
+console.log("New Stop Post: " + newStop);
